@@ -1,4 +1,4 @@
-name: Update the cask
+name: Update packages
 
 on:
   schedule:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 jobs:
-  update:
+  minitile:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,8 +24,9 @@ jobs:
           sha=$(gh release download "$tag" --repo fiorix/minitile --pattern minitile.dmg.sha256 --output - | awk '{print $1}')
           [[ "$sha" =~ ^[0-9a-f]{64}$ ]] || { echo "No checksum for $tag"; exit 1; }
           sed -i -E "s/^  version \".*\"/  version \"$version\"/; s/^  sha256 \".*\"/  sha256 \"$sha\"/" Casks/minitile.rb
-          if git diff --quiet; then echo "Already at $version"; exit 0; fi
+          if git diff --quiet; then echo "minitile is already at $version"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -am "Update minitile to $version"
+          git pull --rebase
           git push
