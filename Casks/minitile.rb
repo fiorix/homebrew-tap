@@ -18,7 +18,10 @@ cask "minitile" do
   app "Minitile.app"
   binary "#{appdir}/Minitile.app/Contents/MacOS/mntl"
 
-  uninstall quit: "com.github.fiorix.minitile"
+  uninstall quit: [
+    "app.minitile",
+    "com.github.fiorix.minitile",
+  ]
 
   zap trash: [
     "~/.config/minitile",
