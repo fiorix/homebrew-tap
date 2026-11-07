@@ -21,7 +21,7 @@ The cask installs `Minitile.app` and links the `mntl` command line tool. Upgrade
 
 ## chan
 
-[chan](https://chan.app) is the modern engineer's IDE. Apple silicon macOS only. Install the desktop app, `Chan.app` from the signed and notarized release DMG, or the headless CLI, the released `chan` binary with its `cs` symlink; one or the other, not both, since the app provides the same `chan` and `cs` commands through shims in `~/.local/bin` that it maintains itself.
+[chan](https://chan.app) is a supercharged terminal emulator, free and open source. Apple silicon macOS only. Install the desktop app, `Chan.app` from the signed and notarized release DMG, or the headless CLI, the released `chan` binary with its `cs` symlink; one or the other, not both, since the app provides the same `chan` and `cs` commands through shims in `~/.local/bin` that it maintains itself.
 
 ```sh
 brew trust --cask fiorix/tap/chan-desktop
