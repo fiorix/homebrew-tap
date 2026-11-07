@@ -19,6 +19,22 @@ brew install --cask fiorix/tap/minitile
 
 The cask installs `Minitile.app` and links the `mntl` command line tool. Upgrade with `brew upgrade --cask minitile`; `brew uninstall --zap --cask minitile` also removes its configuration and state. Before the first launch, give every display a second desktop in Mission Control; see [Getting started](https://github.com/fiorix/minitile#getting-started).
 
+## chan
+
+[chan](https://chan.app) is the modern engineer's IDE. Apple silicon macOS only. Install the desktop app, `Chan.app` from the signed and notarized release DMG, or the headless CLI, the released `chan` binary with its `cs` symlink; one or the other, not both, since the app provides the same `chan` and `cs` commands through shims in `~/.local/bin` that it maintains itself.
+
+```sh
+brew trust --cask fiorix/tap/chan-desktop
+brew install --cask fiorix/tap/chan-desktop
+```
+
+```sh
+brew trust --formula fiorix/tap/chan
+brew install fiorix/tap/chan
+```
+
+The app updates itself; the cask declares `auto_updates`, so `brew upgrade` skips it unless given `--greedy`. The CLI updates through `brew upgrade chan`; prefer that over `chan upgrade` so Homebrew's recorded version stays correct. Both definitions are rendered from templates in [fiorix/chan](https://github.com/fiorix/chan) (`packaging/distros/homebrew/`) and pushed here by its `publish-downstream` workflow at every GA release; the tap's update workflow leaves these two files alone. Do not edit them by hand.
+
 ## Updates
 
-Each package follows its project's latest GitHub release. The update workflow checks every three hours and commits the new version and checksum; it can also be run by hand, or triggered by a project's release workflow with a `repository_dispatch` event.
+Each package follows its project's latest GitHub release, chan's two definitions through chan's own release workflow (above) and the others through this tap's update workflow, which checks every three hours and commits the new version and checksum; it can also be run by hand, or triggered by a project's release workflow with a `repository_dispatch` event.
