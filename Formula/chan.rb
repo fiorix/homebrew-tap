@@ -7,10 +7,10 @@
 class Chan < Formula
   desc "Supercharged terminal emulator, headless server and CLI"
   homepage "https://chan.app/"
-  # No version stanza: brew scans it from the /v0.128.0/ URL path and
+  # No version stanza: brew scans it from the /v0.129.0/ URL path and
   # audit rejects an explicit duplicate.
-  url "https://github.com/fiorix/chan/releases/download/v0.128.0/chan-aarch64-apple-darwin.tar.gz"
-  sha256 "b92fc1f81f70ad5dcc31d02488ec270be6f5b5da77ae808ce512755188f95dcc"
+  url "https://github.com/fiorix/chan/releases/download/v0.129.0/chan-aarch64-apple-darwin.tar.gz"
+  sha256 "3d3b533af50b54d05d82f97db8d5b44babc3bfe2e1c5082f34291861c6c99ba3"
   license "Apache-2.0"
 
   livecheck do
