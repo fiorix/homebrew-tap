@@ -1,6 +1,6 @@
 cask "minitile" do
-  version "0.9.1"
-  sha256 "bdf6d47b93d527dcfc77385843090c3222168e0fda3ffb9b6643ab47aec4f93f"
+  version "0.10.0"
+  sha256 "8d50d9168fc1edea841ad191d99bbbfed387fd1e43386b984dbfece2d6480e29"
 
   url "https://github.com/fiorix/minitile/releases/download/v#{version}/minitile.dmg"
   name "minitile"
